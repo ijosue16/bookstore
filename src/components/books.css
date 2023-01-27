@@ -1,0 +1,49 @@
+.Books-container {
+  background-color: #fafafa;
+  height: 100vh;
+}
+
+.single-book {
+  background-color: #fff;
+}
+
+.action-btns,
+.book-container {
+  background-color: #fff;
+  color: #6d9bd8;
+}
+
+.add-btn,
+.update-btn {
+  background-color: #0290ff;
+  color: #fff;
+}
+
+.circular {
+  width: 62px;
+  height: 62px;
+}
+
+.book-info {
+  width: 508px;
+}
+
+.Book-title {
+  width: 320px;
+}
+
+.add-btn {
+  width: 220px;
+}
+
+.dropdown {
+  width: 320px;
+}
+
+.movie-type {
+  color: #898989;
+}
+
+.book-author {
+  color: #6db4e8;
+}
