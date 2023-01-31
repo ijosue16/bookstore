@@ -8,7 +8,8 @@ const Form = () => (
     <section>
       <h3>Add new book</h3>
       <form className=" d-block d-md-flex gap-5 container-fluid m-0 p-0">
-        <input placeholder="Book-title " className="Book-title" />
+        <input placeholder="Book title " className="Book-title" />
+        <input placeholder="Add Author " className="Book-title" />
         <select className="dropdown">
           <option value="action">action</option>
           <option value="Science Fiction">Science Fiction</option>
