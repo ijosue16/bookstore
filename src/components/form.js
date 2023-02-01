@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './books.css';
 import { useDispatch } from 'react-redux';
@@ -6,36 +6,29 @@ import { nanoid } from '@reduxjs/toolkit';
 import { addBook } from '../redux/books/books';
 
 const Form = () => {
-  // const [title, setTitle] = useState('');
-  // const [author, setAuthor] = useState('');
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
 
   const dispatch = useDispatch();
-  const titleInput = useRef();
-  const authorInput = useRef();
 
   const handleAddingBook = (e) => {
     e.preventDefault();
-    const title = titleInput.current.value;
-    const author = authorInput.current.value;
-    if (title && author) {
-      const book = {
-        id: nanoid(),
-        title,
-        author,
-      };
-      dispatch(addBook(book));
-    }
-    titleInput.current.value = '';
-    authorInput.current.value = '';
+    const book = {
+      id: nanoid(),
+      title,
+      author,
+    };
+    dispatch(addBook(book));
+    setTitle('');
+    setAuthor('');
   };
-
   // changing title
-  // const handleTitleChange = (e) => (setTitle(e.target.value));
+  const handleTitleChange = (e) => (setTitle(e.target.value));
 
   // changing author
-  // const handleAuthorChange = (e) => {
-  //   setAuthor(e.target.value);
-  // };
+  const handleAuthorChange = (e) => {
+    setAuthor(e.target.value);
+  };
   return (
     <>
       <div className="border border-1 my-4" />
@@ -46,16 +39,14 @@ const Form = () => {
           onSubmit={handleAddingBook}
         >
           <input
-            ref={titleInput}
             placeholder="Book title "
             className="Book-title"
-            // onChange={handleTitleChange}
+            onChange={handleTitleChange}
           />
           <input
-            ref={authorInput}
             placeholder="Add Author "
             className="Book-title"
-            // onChange={handleAuthorChange}
+            onChange={handleAuthorChange}
           />
           <select className="dropdown">
             <option value="action">action</option>
