@@ -20,7 +20,7 @@ const Category = () => {
       >
         CHECK STATUS
       </button>
-      <p>{status}</p>
+      <h2>{status}</h2>
     </div>
   );
 };
