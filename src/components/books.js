@@ -7,7 +7,7 @@ import Book from './book';
 import Form from './form';
 
 const Books = () => {
-  const books = useSelector((state) => state.Books);
+  const books = useSelector((state) => state.Bookz);
   return (
     <>
       <div className="Books-container p-5">
@@ -15,14 +15,14 @@ const Books = () => {
           <div className="d-flex flex-column gap-2 justify-content-center align-content-center  ">
 
             {books.map((book) => (
+
               <Book
-                key={book.id}
+                Key={book.id}
                 title={book.title}
                 author={book.author}
                 id={book.id}
               />
             ))}
-
           </div>
         </div>
         <Form />

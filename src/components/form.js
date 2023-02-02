@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './books.css';
 import { useDispatch } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
+import { nanoid } from 'nanoid';
 import { addBook } from '../redux/books/books';
 
 const Form = () => {
@@ -13,8 +13,9 @@ const Form = () => {
 
   const handleAddingBook = (e) => {
     e.preventDefault();
+    const generateId = () => nanoid();
     const book = {
-      id: nanoid(),
+      id: generateId(),
       title,
       author,
     };
@@ -26,9 +27,8 @@ const Form = () => {
   const handleTitleChange = (e) => (setTitle(e.target.value));
 
   // changing author
-  const handleAuthorChange = (e) => {
-    setAuthor(e.target.value);
-  };
+  const handleAuthorChange = (e) => (
+    setAuthor(e.target.value));
   return (
     <>
       <div className="border border-1 my-4" />

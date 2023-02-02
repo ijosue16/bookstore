@@ -7,12 +7,12 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
-  const { title, author } = props;
+  const { title, author, id } = props;
 
   const dispatch = useDispatch();
 
-  const handleBookRemove = (book) => {
-    dispatch(removeBook(book));
+  const handleBookRemove = (id) => {
+    dispatch(removeBook(id));
   };
 
   return (
@@ -27,7 +27,7 @@ const Book = (props) => {
           <button
             type="button"
             className="border border-0 p-1 action-btns"
-            onClick={() => handleBookRemove(props)}
+            onClick={() => handleBookRemove(id)}
           >
             remove
           </button>
@@ -59,5 +59,6 @@ const Book = (props) => {
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 export default Book;
