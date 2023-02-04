@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './books.css';
 import { useDispatch } from 'react-redux';
@@ -10,18 +10,22 @@ const Form = () => {
   const [author, setAuthor] = useState('');
 
   const dispatch = useDispatch();
+  const categoryInput = useRef();
 
   const handleAddingBook = (e) => {
     e.preventDefault();
-    const generateId = () => nanoid();
+    const category = categoryInput.current.value;
+
     const book = {
-      id: generateId(),
+      item_id: nanoid(),
       title,
       author,
+      category,
     };
-    dispatch(addBook(book));
+
     setTitle('');
     setAuthor('');
+    dispatch(addBook(book));
   };
   // changing title
   const handleTitleChange = (e) => (setTitle(e.target.value));
@@ -29,6 +33,7 @@ const Form = () => {
   // changing author
   const handleAuthorChange = (e) => (
     setAuthor(e.target.value));
+
   return (
     <>
       <div className="border border-1 my-4" />
@@ -48,7 +53,7 @@ const Form = () => {
             className="Book-title"
             onChange={handleAuthorChange}
           />
-          <select className="dropdown">
+          <select className="dropdown" ref={categoryInput} defaultValue="categories">
             <option value="action">action</option>
             <option value="Science Fiction">Science Fiction</option>
             <option value="Economy">Economy</option>

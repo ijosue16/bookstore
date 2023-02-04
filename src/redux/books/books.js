@@ -1,41 +1,66 @@
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const DISPLAY_BOOK = 'bookstore/books/DISPLAY_BOOK';
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps';
+const ID = '8yyptBp9LHyKyBQy8Pnz';
+const initialState = [];
 
-const initialState = [
-  {
-    id: 1,
-    title: 'Nothing to loose',
-    author: 'Augusto braga',
-  },
-  {
-    id: 2,
-    title: 'When thing fall apart',
-    author: 'Maria toney',
-  },
-  {
-    id: 3,
-    title: 'Le livre de la vie',
-    author: 'Martin Gray',
-  },
-];
+const displayBookAPI = async () => {
+  const resp = await fetch(`${URL}/${ID}/books`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const bookArr = await resp.json();
+  const books = Object.keys(bookArr).map((id) => ({
+    item_id: id,
+    title: bookArr[id][0].title,
+    author: bookArr[id][0].author,
+    category: bookArr[id][0].category,
+  }));
+  return books;
+};
 
-export const addBook = (book) => ({
-  type: ADD_BOOK,
-  payload: book,
+export const displayBook = () => (async (dispatch) => {
+  const books = await displayBookAPI();
+  dispatch({ type: DISPLAY_BOOK, payload: books });
 });
-export const removeBook = (id) => ({
-  type: REMOVE_BOOK,
-  payload: id,
-});
+
+export const addBook = (book) => async (dispatch) => {
+  await fetch(`${URL}/${ID}/books`, {
+    method: 'POST',
+    body: JSON.stringify(book),
+    headers: {
+      'Content-type': 'application/json',
+    },
+  })
+    .then(() => dispatch({ type: ADD_BOOK, payload: book }));
+};
+
+export const removeBook = (id) => async (dispatch) => {
+  await fetch(`${URL}/${ID}/books/${id}/`, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+    body: JSON.stringify({
+      item_id: id,
+    }),
+  })
+    .then(() => dispatch({ type: REMOVE_BOOK, payload: id }));
+};
 
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [...state,
-        { title: action.payload.title, author: action.payload.author, id: action.payload.id },
+      return [...state, action.payload,
       ];
+    case DISPLAY_BOOK:
+      return action.payload;
+
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      return [...state.filter((book) => book.id !== action.payload)];
 
     default:
       return state;
