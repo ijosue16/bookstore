@@ -22,7 +22,7 @@ const Book = (props) => {
   };
 
   return (
-    <div className="d-block d-lg-flex  mb-2 border border-1 p-3 single-book">
+    <li className="d-block d-lg-flex  mb-2 border border-1 p-3 single-book">
       <div className="flex-fill book-info ">
         <p className="m-0 p-0 fw-bold movie-type">{category}</p>
         <h4 className="m-0 p-0">{title}</h4>
@@ -59,7 +59,7 @@ const Book = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 Book.propTypes = {
