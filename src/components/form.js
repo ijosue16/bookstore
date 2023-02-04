@@ -53,12 +53,12 @@ const Form = () => {
             className="Book-title"
             onChange={handleAuthorChange}
           />
-          <select className="dropdown" ref={categoryInput} defaultValue="categories">
+          <select className="dropdown px-2" ref={categoryInput} defaultValue="categories">
             <option value="action">action</option>
             <option value="Science Fiction">Science Fiction</option>
             <option value="Economy">Economy</option>
           </select>
-          <button type="submit" className="primary-button-big border-0 rounded p-2 add-btn">ADD BOOK</button>
+          <button type="submit" className="primary-button-big border-0 rounded p-2 py-1 add-btn">ADD BOOK</button>
         </form>
       </section>
     </>
