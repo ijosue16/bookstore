@@ -12,7 +12,7 @@ const Books = () => {
   useEffect(() => {
     dispatch(displayBook());
   }, [dispatch]);
-  const books = useSelector((state) => state.Bookz);
+  const books = useSelector(((state) => state.Bookz));
   return (
     <>
       <div className="Books-container p-5">
