@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css';
-import { FaUser } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
 
 const NavBar = () => (
   <nav className=" container-fluid m-0 p-3 d-block d-md-flex justify-content-start align-content-center gap-3 border navbar">
@@ -14,7 +14,7 @@ const NavBar = () => (
       <Link className="text-decoration-none" to="/categories">Categories</Link>
     </div>
     <div className="icon container  justify-content-end flex-fill">
-      <FaUser className="" />
+      <FaUserCircle className="user-account" />
     </div>
   </nav>
 );
