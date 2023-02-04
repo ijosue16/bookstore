@@ -16,22 +16,21 @@ const Books = () => {
   return (
     <>
       <div className="Books-container p-5">
-        <div className="m-0 p-0">
-          <div className="d-flex flex-column gap-2 justify-content-center align-content-center  ">
 
-            {books.map((book) => (
+        <ul className="d-flex flex-column gap-2 justify-content-center align-content-center list-unstyled ">
 
-              <Book
-                key={book.item_id}
-                id={book.item_id}
-                title={book.title}
-                author={book.author}
-                category={book.category}
+          {books.map((book) => (
 
-              />
-            ))}
-          </div>
-        </div>
+            <Book
+              key={book.item_id}
+              id={book.item_id}
+              title={book.title}
+              author={book.author}
+              category={book.category}
+            />
+          ))}
+        </ul>
+
         <Form />
       </div>
 

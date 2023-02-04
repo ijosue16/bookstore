@@ -21,7 +21,7 @@
 
 .circular {
   width: 62px;
-  height: 62px;
+  height: 72px;
 }
 
 .book-info {
@@ -46,4 +46,16 @@
 
 .book-author {
   color: #6db4e8;
+}
+
+.slash-bar {
+  height: 100%;
+}
+
+.completed {
+  color: #b9b9b9;
+}
+
+.current-chapter {
+  color: #eaeaea;
 }

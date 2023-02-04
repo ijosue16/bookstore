@@ -26,22 +26,21 @@
 
 # 📖 [Book store] <a name="about-project"></a>
 
-> This is the first setup of components of the Book store app.
+> This software shows books that are available for reading and allows users to add and remove their own books to update their progress. It also displays the title of the book, its author, and the genre.
 
-**[Book store]**This is the first setup of components of the Book store app.
+**[Book store]** This software shows books that are available for reading and allows users to add and remove their own books to update their progress. It also displays the title of the book, its author, and the genre.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 
+- **[React js]**
 
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
+- **[Redux toolkit]**
+
+- **[CSS/bootstrap]**
+
 
 
 
@@ -109,7 +108,7 @@ Install this project with:
 
   open terminal 
 
-  run `"npm install"`
+  run "npm install"
 
 ```
 
@@ -121,28 +120,28 @@ To run the project, execute the following command:
 
 ```sh
 
-run `" npm run build"` and then
+run " npm run build" and then
 
-run `" npm start"`
+run " npm start"
 ```
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
+
+
 
 ```sh
-  bin/rails test test/models/article_test.rb
+  run "npm run test"
 ```
---->
+
 
 ### Deployment
 
 You can deploy this project using:
 
-Github pages
+Github pages or Render.
 
 
 <!-- ``` Github pages
@@ -158,11 +157,11 @@ Github pages
 
 
 
-👤 **Author1**
+👤 **Iradukunda Josue**
 
 - GitHub: [@ijosue16](https://github.com/ijosue16)
-<!-- - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle) -->
+- Twitter: [@iradukunda_23](https://twitter.com/iradukunda_23)
+<!-- - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle) -->
 
 <!-- 👤 **Author2**
 
@@ -178,8 +177,9 @@ Github pages
 
 <!-- > Describe 1 - 3 features you will add to the project. -->
 
-- **[Add functionality]**
+- **Add Edit functionality**
 
+- **Add update progress functionality**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -199,7 +199,7 @@ Feel free to check the [issues page](../../issues/).
 
 
 
-If you like this project...
+If you like this project offer me a star ⭐
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -209,7 +209,7 @@ If you like this project...
 
 > Microverse team.
 
-I would like to thank...
+I would like to thank Microverse team
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
