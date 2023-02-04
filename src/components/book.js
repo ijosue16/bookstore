@@ -4,21 +4,27 @@ import './books.css';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBook, displayBook } from '../redux/books/books';
 
 const Book = (props) => {
-  const { title, author, id } = props;
+  const {
+    title, author, id, category,
+  } = props;
 
   const dispatch = useDispatch();
 
   const handleBookRemove = (id) => {
-    dispatch(removeBook(id));
+    function remove() {
+      dispatch(removeBook(id));
+    }
+    remove();
+    dispatch(displayBook());
   };
 
   return (
     <div className="d-block d-lg-flex  mb-2 border border-1 p-3 single-book">
       <div className="flex-fill book-info ">
-        <p className="m-0 p-0 fw-bold movie-type">action</p>
+        <p className="m-0 p-0 fw-bold movie-type">{category}</p>
         <h4 className="m-0 p-0">{title}</h4>
         <h6 className="m-0 p-0 book-author">{author}</h6>
         <div className=" d-block d-md-flex gap-2 mt-2">
@@ -60,5 +66,6 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 export default Book;
