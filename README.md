@@ -160,7 +160,7 @@ Github pages or Render.
 👤 **Iradukunda Josue**
 
 - GitHub: [@ijosue16](https://github.com/ijosue16)
-- Twitter: [@iradukunda_23](https://twitter.com/iradukunda_23)
+- LinkedIn: [Iradukunda Twahirwa Josue](https://www.linkedin.com/in/iradukunda-twahirwa-josue/)
 <!-- - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle) -->
 
 <!-- 👤 **Author2**
